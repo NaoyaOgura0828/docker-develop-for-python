@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  python3.10.7:
+    build: .
+    volumes:
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+      - .:/workspace:cached
+    command: >
+      /bin/sh -c "while sleep 1000; do :; done"
+    user: "1000:1000"
+    ports:
+      - ${IP}:22:22
