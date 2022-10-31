@@ -3,11 +3,10 @@ services:
   python3.10.7:
     build: .
     volumes:
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro # Valid only if the host OS is Linux
+      - /etc/group:/etc/group:ro # Valid only if the host OS is Linux
       - .:/workspace:cached
     command: >
       /bin/sh -c "while sleep 1000; do :; done"
-    user: "1000:1000"
     ports:
       - ${IP}:22:22
