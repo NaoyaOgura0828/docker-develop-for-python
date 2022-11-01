@@ -19,11 +19,10 @@ git cloneコマンドで本Repositoryを任意のディレクトリ配下にclon
 <br>
 
 ## 実行ユーザーの設定
-`Dockerfile`内のUSER_NAMEにコンテナ起動後の実行ユーザーを設定する。
+`.env`内のUSER_NAMEにコンテナ起動後の実行ユーザーを設定する。
 
-```Dockerfile
-# Execution user name after container startup
-ARG USER_NAME=${実行ユーザー名}
+```
+USER_NAME = ${実行ユーザー名}
 ```
 
 <br>
@@ -56,13 +55,24 @@ ARG USER_NAME=${実行ユーザー名}
 
 <br>
 
+## ボリュームの設定
+`.env`内のVOLUME_NAMEを任意のボリューム名に変更する。
+<br>
+ボリューム名が起動中のコンテナと重複しないように留意する。
+
+```
+VOLUME_NAME = ${ボリューム名}
+```
+
+<br>
+
 ## コンテナIPアドレスの設定
 `.env`内のIPアドレスを任意の値に変更する。(例：127.0.0.2)
 <br>
 IPアドレスが起動中のコンテナと重複しないように留意する。
 
 ```
-IP = 127.0.0.1
+IP = ${IPアドレス}
 ```
 
 <br>
