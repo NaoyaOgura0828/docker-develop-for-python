@@ -1,7 +1,11 @@
 version: "3.8"
 services:
   python3.10.7:
-    build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - USER_NAME=${USER_NAME}
     volumes:
       - /etc/passwd:/etc/passwd:ro # Valid only if the host OS is Linux
       - /etc/group:/etc/group:ro # Valid only if the host OS is Linux
@@ -12,4 +16,4 @@ services:
       - ${IP}:22:22
 volumes:
   home:
-    name: Python3.10.7
+    name: ${VOLUME_NAME}
