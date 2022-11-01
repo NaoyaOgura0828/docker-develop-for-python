@@ -6,6 +6,8 @@ ARG USER_NAME=NaoyaOgura
 # Repository Update
 RUN apt update -y
 RUN apt upgrade -y
+
+# sudo Install
 RUN apt install sudo -y
 
 # Add User
