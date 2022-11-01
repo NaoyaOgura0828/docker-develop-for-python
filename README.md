@@ -29,6 +29,8 @@ ARG USER_NAME=${実行ユーザー名}
 <br>
 
 `devcontainer.json`内のcontainerUserにコンテナ起動後の実行ユーザーを設定する。
+<br>
+`devcontainer.json`内のworkspaceFolderにコンテナ起動後の実行ユーザーを設定する。
 
 ```json
 {
@@ -38,7 +40,7 @@ ARG USER_NAME=${実行ユーザー名}
 	],
 	"service": "python3.10.7",
 	"containerUser": "${実行ユーザー名}",
-	"workspaceFolder": "/home/NaoyaOgura"
+	"workspaceFolder": "/home/${実行ユーザー名}"
 }
 ```
 
