@@ -1,7 +1,7 @@
 FROM python:3.10.7
 
 # Execution user name after container startup
-ARG USER_NAME=NaoyaOgura
+ARG USER_NAME
 
 # Repository Update
 RUN apt update -y
