@@ -7,7 +7,7 @@ ARG USER_NAME
 RUN apt update -y
 RUN apt upgrade -y
 
-# sudo Install
+# Install sudo
 RUN apt install sudo -y
 
 # Add User
