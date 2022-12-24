@@ -28,6 +28,9 @@ RUN dnf install wget -y
 RUN dnf install make -y
 RUN dnf install xz -y
 
+# Install pip
+RUN dnf install pip -y
+
 # Install Python3.8
 RUN cd /tmp && \
     wget https://www.python.org/ftp/python/${PYTHON3_8}/Python-${PYTHON3_8}.tar.xz &&\
