@@ -33,11 +33,11 @@ USER_NAME = ${実行ユーザー名}
 
 ```json
 {
-	"name": "Python3.10.7 開発環境",
+	"name": "Python 開発環境",
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
-	"service": "python3.10.7",
+	"service": "python",
 	"containerUser": "${実行ユーザー名}",
 	"workspaceFolder": "/home/${実行ユーザー名}"
 }
@@ -84,5 +84,5 @@ IP = ${IPアドレス}
 
 2回目以降
 1. VSCodeを起動し、左メニューから拡張機能`リモートエクスプローラー`を押下する。
-2. プルダウンを`Containers`に変更し、コンテナ一覧に表示されている`docker_develop_for_python-python3.10.7-1`にマウスオーバーする。
-3. `docker_develop_for_python-python3.10.7-1`右に表示される`フォルダアイコン`を押下する。
+2. プルダウンを`Containers`に変更し、コンテナ一覧に表示されている`docker_develop_for_python-python-1`にマウスオーバーする。
+3. `docker_develop_for_python-python-1`右に表示される`フォルダアイコン`を押下する。
