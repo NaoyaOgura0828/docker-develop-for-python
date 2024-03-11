@@ -1,24 +1,25 @@
 version: '3.8'
+
 services:
   python:
     image: ${IMAGE_NAME}
     container_name: ${CONTAINER_NAME}
     build:
-      context: .
-      dockerfile: ./Dockerfile
+      context: ./python
+      dockerfile: Dockerfile
       args:
+        - BASE_IMAGE_TAG=${BASE_IMAGE_TAG}
         - USER_NAME=${USER_NAME}
+        - PYTHON_VERSION=${PYTHON_VERSION}
     volumes:
-      - /etc/passwd:/etc/passwd:ro # Valid only if the host OS is Linux
-      - /etc/group:/etc/group:ro # Valid only if the host OS is Linux
       - home:/home
-    ports:
-      - ${IP}:22:22
     stdin_open: true
     tty: true
+
 volumes:
   home:
     name: ${VOLUME_NAME}
+
 networks:
   default:
     name: ${NETWORK_NAME}
